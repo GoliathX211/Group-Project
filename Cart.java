@@ -71,7 +71,7 @@ public class Cart {
         System.out.println("");
         Double finalCost = 0.00d;
         for (Item item : this.items) {
-            System.out.println("$" + item.cost + "\t" + item.name);
+            System.out.println("$" + String.format("%.2f", item.cost) + "\t" + item.name);
             finalCost += item.cost;
         }
         System.out.println("\nNet Sales Cost:\n$" + String.format("%.2f", finalCost));
