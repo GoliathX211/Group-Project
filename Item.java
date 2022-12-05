@@ -10,7 +10,7 @@ public class Item {
     public static Item shopping(Item[] items) {
         int choice;
         for (int iterator = 0; iterator < items.length; iterator++) {
-            System.out.println("Name: " + items[iterator].name + "\nCost: $" + items[iterator].cost + "\nIndex: " + iterator + "\n");
+            System.out.println(iterator + ": " + items[iterator].name + " - $" + String.format("%.2f", items[iterator].cost));
         }
         while (true) {
             try {
