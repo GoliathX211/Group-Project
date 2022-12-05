@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Cart {
     public Item[] items;
     public Cart() {
@@ -14,10 +16,24 @@ public class Cart {
     public void displayItems() {
         Double totalCost = 0.00d;
         System.out.println("Current Cart: \n");
-        for (int index = 0; index < this.items.length; index++) {
-            System.out.println("$" + this.items[index].cost + "\t" + this.items[index].name);
-            totalCost += this.items[index].cost;
+        for (Item item : this.items) {
+            System.out.println("$" + item.cost + "\t" + item.name);
+            totalCost += item.cost;
         }
         System.out.println("\nTotal Cost:\n$" + totalCost);
+    }
+    public void checkout() {
+        Scanner scanner = new Scanner(System.in);
+        Double totalCost = 0.00d;
+        Item[] warranties = new Item[0];
+        for (Item item : this.items) {
+            System.out.println("$" + item.cost + "\t" + item.name);
+            System.out.print("Warranty? (Enter 'Yes' or 'Y'): ");
+            String decision = scanner.nextLine();
+            if (decision.equals("Yes") | decision.equals("Y")) {
+                System.out.println("");
+            }
+            totalCost += item.cost;
+        }
     }
 }
